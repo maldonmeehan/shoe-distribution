@@ -50,3 +50,17 @@ delete('/stores/:id/delete') do
   @stores = Store.all()
   erb(:stores)
 end
+
+get('/brands/new') do
+  @stores = Store.all()
+  erb(:brand_form)
+end
+
+# post("/brands") do
+#   name = params.fetch("name")
+#   store_id = params.fetch("store_id").to_i()
+#   @store = Store.find(store_id)
+#   @brand = Brand.create({:name => name, :id => nil})
+#   @stores = Store.all()
+#   erb(:index)
+# end

@@ -75,3 +75,11 @@ describe('delete a store', {:type => :feature}) do
     expect(page).to have_content('Current Stores in Database')
   end
 end
+
+describe('the add new brand page route', {:type => :feature}) do
+  it('takes the user to the brand form page') do
+    visit('/')
+    click_link('Add new brand')
+    expect(page).to have_content('Add new brand:')
+  end
+end
