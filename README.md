@@ -6,9 +6,7 @@ By Maldon Meehan
 
 ## Description
 
-An Epicodus independent student project to practice Ruby databases with Active Record using many-to-many associations.
-
-The project was to write a program to track shoe brands and what stores they are in. Here are the user stories:
+An Epicodus independent student project to practice Ruby databases with Active Record using many-to-many associations. Here are the user stories:
 
 * As a user, I want to be able to add, update, delete and list shoe stores.
 
@@ -24,7 +22,7 @@ The project was to write a program to track shoe brands and what stores they are
 
 ## Setup/Installation Requirements
 
-Install *Recipe Box* by cloning the repository.  
+Install *Shoe Distribution* by cloning the repository.  
 ```
 $ git clone https://github.com/maldonmeehan/shoe-distribution.git
 ```
