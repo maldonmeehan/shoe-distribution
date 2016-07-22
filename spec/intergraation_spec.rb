@@ -35,10 +35,23 @@ describe('the store errors route', {:type => :feature}) do
   end
 end
 
-describe('the add new brand page route', {:type => :feature}) do
-  it('takes the user to the brand form page') do
+describe('view single store instance path', {:type => :feature}) do
+  it('allows the user to view a single survey') do
     visit('/')
-    click_link('Add new brand')
-    expect(page).to have_content('Add new brand:')
+    click_link('Add new store')
+    fill_in("name", :with => 'Boot Barn')
+    click_button('Add store')
+    expect(page).to have_content('Shoe Mill')
+    click_link('Boot Barn')
+    expect(page).to have_content('Individual store page')
   end
 end
+
+
+# describe('the add new brand page route', {:type => :feature}) do
+#   it('takes the user to the brand form page') do
+#     visit('/')
+#     click_link('Add new brand')
+#     expect(page).to have_content('Add new brand:')
+#   end
+# end

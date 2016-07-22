@@ -1,0 +1,21 @@
+<h1>Individual store page</h1>
+
+<h2><%= @store.name() %></h2>
+
+<% if @store.brands().any?() %>
+  <h3>Here are all the questions in this survey</h3>
+
+  <ul>
+    <% @store.brands().each() do |brands| %>
+      <li><%= brands.name() %></li>
+    <% end %>
+  </ul>
+
+  <% else %>
+    <p>There are currently no brands for this store</p>
+<% end %>
+
+<div class='container'>
+  <button><a href="/stores/new">Add new store</a></button>
+  <button><a href="/brands/new">Add new brand</a></button>
+</div>
