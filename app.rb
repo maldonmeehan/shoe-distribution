@@ -56,7 +56,7 @@ get('/brands/new') do
   erb(:brand_form)
 end
 
-post("/brands") do
+post('/brands') do
   name = params.fetch("name")
   store_id = params.fetch("store_id").to_i()
   @store = Store.find(store_id)
