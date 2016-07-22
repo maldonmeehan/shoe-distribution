@@ -15,6 +15,8 @@
     <p>There are currently no brands for this store</p>
 <% end %>
 
+<p><a href="/stores/<%= @store.id() %>/edit">Update</a></p>
+
 <div class='container'>
   <button><a href="/stores/new">Add new store</a></button>
   <button><a href="/brands/new">Add new brand</a></button>

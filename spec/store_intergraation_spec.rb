@@ -15,7 +15,6 @@ describe('the add new store page route', {:type => :feature}) do
   end
 end
 
-
 describe('add a new store', {:type => :feature}) do
   it('allows the user to add a store') do
     visit('/')
@@ -33,5 +32,20 @@ describe('the store errors route', {:type => :feature}) do
     fill_in('name', :with => '')
     click_button('Add store')
     expect(page).to have_content('Oops there were some errors:')
+  end
+end
+
+describe('update a store name route', {:type => :feature}) do
+  it('allows the user to update the store name') do
+    visit('/')
+    click_link('Add new store')
+    fill_in("name", :with => 'The Green Shoe')
+    click_button('Add store')
+    expect(page).to have_content('The Green Shoe')
+    click_link('The Green Shoe')
+    click_link("Update")
+    fill_in('name', :with => 'The Red Barn')
+    click_button('Update')
+    expect(page).to have_content('The Red Barn')
   end
 end

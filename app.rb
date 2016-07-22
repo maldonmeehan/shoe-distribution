@@ -17,21 +17,6 @@ get('/stores') do
   erb(:stores)
 end
 
-# post ('/stores/new') do
-#   name = params.fetch("name")
-#   @new_store = Store.new({:name => name})
-#   if @new_store.save()
-#     redirect("/stores/".concat(@new_store.id().to_s()))
-#   else
-#     erb(:index)
-#   end
-# end
-
-get('/stores/:id') do
-  @store = Store.find(params.fetch("id").to_i())
-  erb(:form)
-end
-
 post('/stores') do
   name = params.fetch("name")
   @store = Store.new({:name => name, :id => nil})
@@ -46,4 +31,23 @@ end
 get('/stores/:id') do
   @store = Store.find(params.fetch("id").to_i())
   erb(:store)
+end
+
+get('/stores/:id/edit') do
+  @store = Store.find(params.fetch("id").to_i())
+  erb(:store_edit)
+end
+
+patch('/stores/:id/edit') do
+  name = params.fetch('name')
+  @store = Store.find(params.fetch("id").to_i())
+  @store.update({:name => name})
+  erb(:store)
+end
+
+delete('/stores/:id/delete') do
+  @store = Store.find(params.fetch('id').to_i())
+  @store.delete()
+  @stores = Store.all()
+  erb(:stores)
 end

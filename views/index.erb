@@ -1,16 +1,5 @@
 <h1>Welcome</h1>
 
-<% if @stores.any?() %>
-<h2> Here are you Stores:</h2>
-<ul>
-  <% @stores.each do |store| %>
-  <li><a href='/stores/<%= store.id() %>'><%= store.name() %></a>
-  <% end %>
-</ul>
-<% else %>
-<h2> You don't have any stores yet.</h2>
-<% end %>
-
 <div class='container'>
   <button><a href="/stores/new">Add new store</a></button>
   <button><a href="/brands/new">Add new brand</a></button>
