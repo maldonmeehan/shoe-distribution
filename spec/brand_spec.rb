@@ -25,6 +25,4 @@ describe(Brand) do
 end
 
 
-
-
 end
