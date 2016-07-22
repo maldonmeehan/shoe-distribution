@@ -3,11 +3,11 @@
 <h2><%= @store.name() %></h2>
 
 <% if @store.brands().any?() %>
-  <h3>Here are all the questions in this survey</h3>
+  <h3>Here are all the brands in this store</h3>
 
   <ul>
-    <% @store.brands().each() do |brands| %>
-      <li><%= brands.name() %></li>
+    <% @store.brands().each() do |question| %>
+      <li><%= brand.name() %></li>
     <% end %>
   </ul>
 
