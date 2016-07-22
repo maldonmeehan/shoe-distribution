@@ -1,3 +1,17 @@
 .nav {
   text-align: right;
 }
+
+/*.jumbotron {
+  margin-bottom: 1px;
+  background-image: url("../img/jumbotron_header3.jpg");
+  background-position: 0% 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #b2b2b2;
+  text-shadow: black 0.3em 0.3em 0.3em;
+}*/
+
+.btn {
+  margin-top: 10px;
+}

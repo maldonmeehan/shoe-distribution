@@ -56,11 +56,11 @@ get('/brands/new') do
   erb(:brand_form)
 end
 
-post('/brands') do
-  name = params.fetch("name")
-  store_id = params.fetch("store_id").to_i()
-  @store = Store.find(store_id)
-  @brand = Brand.create({:name => name, :id => nil})
-  @stores = Store.all()
-  erb(:index)
-end
+# post('/brands') do
+#   name = params.fetch("name")
+#   store_id = params.fetch("store_id").to_i()
+#   @store = Store.find(store_id)
+#   @brand = Brand.create({:name => name, :id => nil})
+#   @stores = Store.all()
+#   erb(:index)
+# end
