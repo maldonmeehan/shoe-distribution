@@ -1,0 +1,20 @@
+<h1>Current Stores in Database:</h1>
+
+
+<% if @stores.any?() %>
+  <ul>
+    <% @stores.each() do |store| %>
+      <li><a href="/stores/<%= store.id() %>" id='<% store.id() %>'><%= store.name() %></a></li>
+      <% end %>
+  </ul>
+
+<% else %>
+
+  <p>There are no stores added yet</p>
+
+<% end %>
+
+<div class='container'>
+  <button><a href="/stores/new">Add new store</a></button>
+  <button><a href="/brands/new">Add new brand</a></button>
+</div>
