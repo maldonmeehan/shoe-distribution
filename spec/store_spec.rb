@@ -21,6 +21,4 @@ describe(Store) do
       expect(test_store.brands()).to(eq([test_brand1, test_brand2]))
     end
   end
-
-
 end

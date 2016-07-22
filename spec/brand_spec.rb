@@ -1,12 +1,10 @@
 require('spec_helper')
 
 describe(Brand) do
-
   it('validates presence of a brand') do
     brand = Brand.new({:name => ''})
     expect(brand.save()).to(eq(false))
   end
-
 
   it('converts the brand name to title case') do
     brand = Brand.create({:name => 'nike'})
@@ -23,6 +21,4 @@ describe(Brand) do
       expect(test_brand.stores()).to(eq([test_store1, test_store2]))
     end
   end
-
-
 end
