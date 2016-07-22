@@ -57,6 +57,14 @@ get('/brands/new') do
 end
 
 # post('/brands') do
+#   name = params.fetch('name')
+#   @brand = Brand.create({:name => name})
+#   @brand = Brand.all()
+#   @stores = Store.all()
+#   erb(:brand)
+# end
+
+# post('/brands') do
 #   name = params.fetch("name")
 #   store_id = params.fetch("store_id").to_i()
 #   @store = Store.find(store_id)

@@ -1,17 +1,27 @@
+body {
+  background-color:  #fff;
+
+}
+
 .nav {
   text-align: right;
 }
 
-/*.jumbotron {
+.jumbotron {
   margin-bottom: 1px;
-  background-image: url("../img/jumbotron_header3.jpg");
+  background-image: url("../img/jumbotron.jpeg");
   background-position: 0% 20%;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #b2b2b2;
+  color: white;
   text-shadow: black 0.3em 0.3em 0.3em;
-}*/
+}
 
 .btn {
   margin-top: 10px;
+}
+
+.footer {
+  color: #b2b2b2;
+  font-family: cursive;
 }
