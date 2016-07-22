@@ -8,10 +8,10 @@ get ('/') do
   erb(:index)
 end
 
-# get('/stores/new') do
-#   erb(:store_form)
-# end
-#
+get('/stores/new') do
+  erb(:form)
+end
+
 # get('/stores') do
 #   @stores = Store.all()
 #   erb(:stores)
