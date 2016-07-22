@@ -61,3 +61,17 @@ describe('update a store name route', {:type => :feature}) do
     expect(page).to have_content('The Red Barn')
   end
 end
+
+describe('delete a store', {:type => :feature}) do
+  it('allows the user to delete a store') do
+    visit('/')
+    click_link('Add new store')
+    fill_in("name", :with => 'Joes Shoes')
+    click_button('Add store')
+    expect(page).to have_content('Joes Shoes')
+    click_link("Joes Shoes")
+    click_link("Update")
+    click_button('Delete')
+    expect(page).to have_content('Current Stores in Database')
+  end
+end
