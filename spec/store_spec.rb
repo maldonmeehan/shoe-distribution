@@ -6,7 +6,10 @@ describe(Store) do
     expect(store.save()).to(eq(false))
   end
 
-
+  it('converts the store name to title case') do
+    store = Store.create({:name => 'shoe mill'})
+    expect(store.name()).to(eq('Shoe Mill'))
+  end
 
 
 

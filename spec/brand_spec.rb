@@ -8,9 +8,9 @@ describe(Brand) do
   end
 
 
-  it('converts the name to title case') do
-    brand = Brand.create({:name => 'shoe mill'})
-    expect(brand.name()).to(eq('Shoe Mill'))
+  it('converts the brand name to title case') do
+    brand = Brand.create({:name => 'nike'})
+    expect(brand.name()).to(eq('Nike'))
   end
 
   describe("#stores") do
