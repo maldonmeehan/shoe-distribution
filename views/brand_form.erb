@@ -1,0 +1,23 @@
+<h1>Add new brand:</h1>
+
+<form action="/brands" method="post">
+  <div class="form-group">
+    <input id="name" name="name" type="test">
+  </div>
+  <button type="submit" class="btn btn-info">Add store</button>
+</form>
+
+
+<h2> Add new brand:</h2>
+
+<form action="/brands" method="post">
+  <label for="name">Brand Name:</label>
+  <input id="name" name="name" type="text">
+
+  <label for="store_id">Assign to a Store:</label>
+  <% @stores.each() do |store| %>
+    <input type="checkbox" name = "store_ids[]" value="<%= store.id()%>"> <%= store.name() %>
+    <% end %>
+    <hr>
+  <button type="submit" class="btn btn-info">Add brand</button>
+</form>
