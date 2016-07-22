@@ -6,7 +6,7 @@ By Maldon Meehan
 
 ## Description
 
-An Epicodus student project to practice a many-to-many Ruby database with Active Record.
+An Epicodus independent student project to practice Ruby databases with Active Record using many-to-many associations.
 
 The project was to write a program to track shoe brands and what stores they are in. Here are the user stories:
 
