@@ -83,3 +83,21 @@ describe('the add new brand page route', {:type => :feature}) do
     expect(page).to have_content('Add new brand:')
   end
 end
+
+# describe('add a new brand', {:type => :feature}) do
+#   it('allows the user to add a brand') do
+#     visit('/')
+#     click_link('Add new store')
+#     fill_in('name', :with => 'Footlocker')
+#     click_button('Add store')
+#     expect(page).to have_content('Footlocker')
+#     click_link('Add new brand')
+#     fill_in('name', :with => 'Nike')
+#     click_button('Add brand')
+#     expect(page).to have_content('Do you like cats?')
+#   end
+# end
+
+
+# describe('view single brand path', {:type => :feature}) do
+#   it('allows a user to view a single brand') do
