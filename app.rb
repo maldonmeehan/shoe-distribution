@@ -17,7 +17,7 @@ get('/stores') do
 end
 
 post('/stores') do
-  name = params.fetch("name")
+  name = params.fetch('name')
   @store = Store.new({:name => name, :id => nil})
   @stores = Store.all()
   if @store.save()
@@ -56,8 +56,8 @@ get('/brands/new') do
 end
 
 post('/brands') do
-  name = params.fetch("name")
-  @brands = Brand.new({:name => name, :id => nil})
+  name = params.fetch('name')
+  @brand = Brand.new({:name => name, :id => nil})
   @brands = Brand.all()
   if @brand.save()
     erb(:brands)
