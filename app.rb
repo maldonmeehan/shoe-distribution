@@ -8,6 +8,7 @@ get ('/') do
 end
 
 get('/stores/new') do
+  @brands = Brand.all()
   erb(:store_form)
 end
 

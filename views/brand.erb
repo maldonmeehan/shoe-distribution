@@ -1,0 +1,21 @@
+<h1>Individual brand page</h1>
+
+<h2><%= @brand.name() %></h2>
+<div class="main-content">
+  <h3>Stores that carry <%= @brand.name() %>:</h3>
+  <% if @brand.stores.any? %>
+  <ul>
+    <% @brand.stores.each() do |store| %>
+    <li><a href='/stores/<%= store.id() %>'><%= store.name() %></a></li>
+    <% end %>
+  </ul>
+  <% else %>
+  <p>There are currently no brands assigned to this store.</p>
+  <br>
+  <% end %>
+</div>
+
+<div class='container'>
+  <button class="btn btn-info"><a href="/stores/new">Add new store</a></button>
+  <button class="btn btn-info"><a href="/brands/new">Add new brand</a></button>
+</div>
