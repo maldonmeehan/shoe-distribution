@@ -56,7 +56,12 @@ get('/brands/new') do
 end
 
 post('/brands') do
+  name = params.fetch("name")
+  @brands = Brand.new({:name => name, :id => nil})
   @brands = Brand.all()
-  
-  erb(:brands)
+  if @brand.save()
+    erb(:brands)
+  else
+    erb(:brand_errors)
+  end
 end

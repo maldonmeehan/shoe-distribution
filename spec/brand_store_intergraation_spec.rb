@@ -92,6 +92,15 @@ describe('add a new brand route', {:type => :feature}) do
   end
 end
 
+describe('add a new brand', {:type => :feature}) do
+  it('allows the user to add a store') do
+    visit('/')
+    click_link('Add new brand')
+    fill_in('name', :with => 'Nike')
+    click_button('Add Brand')
+    expect(page).to have_content('Nike')
+  end
+end
 
 # describe('view single brand path', {:type => :feature}) do
 #   it('allows a user to view a single brand') do
