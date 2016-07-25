@@ -1,14 +1,12 @@
 <h1>Add new brand:</h1>
-
 <form action="/brands" method="post">
-  <label for="name">Brand Name:</label>
-  <input id="name" name="name" type="text">
-<hr>
-  <label for="store_id">What stores are caring this shoe?</label>
-  <br>
-  <% @stores.each() do |store| %>
-    <input type="checkbox" name = "store_ids[]" value="<%= store.id()%>"> <%= store.name() %>
-    <% end %>
-    <hr>
-  <button type="submit" class="btn btn-info">Add brand</button>
+  <div class="form-group">
+    <label for="name">Brand Name:</label>
+    <input type="text" name="name">
+  </div>
+  <button type="submit" class="btn">Add Brand</button>
 </form>
+
+<div class='container'>
+  <button class="btn btn-info"><a href="/stores/new">Add new store</a></button>
+</div>

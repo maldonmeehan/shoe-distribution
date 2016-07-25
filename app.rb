@@ -52,11 +52,11 @@ delete('/stores/:id/delete') do
 end
 
 get('/brands/new') do
-  @stores = Store.all()
   erb(:brand_form)
 end
 
-get('/brands') do
+post('/brands') do
   @brands = Brand.all()
+  
   erb(:brands)
 end
