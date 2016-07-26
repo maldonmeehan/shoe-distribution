@@ -138,7 +138,8 @@ describe('add a brand to a store route', {:type => :feature}) do
       click_link('Shoe Barn')
       click_link('Add brand to a store')
       expect(page).to have_content('Shoe Barn')
-      # select Nike ?
-      # click_button('Add')#
-#   end
-# end
+      select('Nike', :from => 'brand')
+      click_button('Add')
+      expect(page).to have_content('Nike')
+  end
+end
