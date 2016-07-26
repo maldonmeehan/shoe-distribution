@@ -83,13 +83,13 @@ get('/brand_add_store/:id') do
   erb(:brand_add_store)
 end
 
-# patch('/stores/:id/brands') do
-#   @brand = Brand.find(params.fetch('id').to_i())
-#   new_brand = params.fetch('brand')
-#   store.brands.push(new_brand)
-#   if @brand.save()
-#     erb(:store)
-#   else
-#     erb(:brand_errors)
-#   end
-# end
+patch('/stores/:id/brands') do
+  @brand = Brand.find(params.fetch('id').to_i())
+  new_brand = params.fetch('brand')
+  store.brands.push(new_brand)
+  if @brand.save()
+    erb(:store)
+  else
+    erb(:brand_errors)
+  end
+end
