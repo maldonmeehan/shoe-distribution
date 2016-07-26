@@ -21,8 +21,6 @@ post('/stores') do
   name = params.fetch('name')
   @store = Store.new({:name => name, :id => nil})
   @stores = Store.all()
-  # brand_ids = params[:brand_ids]
-  # @store = Store.create({:name => name, :brand_ids => brand_ids})
   if @store.save()
     erb(:stores)
   else
@@ -81,5 +79,8 @@ end
 
 get('/brand_add_store/:id') do
   @store = Store.find(params.fetch('id').to_i())
+  @brand = Brand.find(params.fetch("id").to_i())
   erb(:brand_add_store)
 end
+
+# patch for brands '/brand_add_store'

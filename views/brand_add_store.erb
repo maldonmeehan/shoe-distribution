@@ -1,7 +1,15 @@
-<h2><%= @store.name() %></h2>
+<h2>Add a brand to <%= @store.name() %></h2>
 
-<h3>Add a brand to a store:</h3>
-<form action="/store/<%= @store.id %>/brands" method="post">
+<% if @store.brands.any? %>
+  <h2>Brands available at <%= @store.name %></h2>
+  <ul>
+    <% @store.brands.each do | brand | %>
+    <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/stores/<%= @store.id %>/brands" method="post">
   <input type="hidden" name="_method" value="patch">
   <div class="form-group">
     <select class="form-control" name="brand">
@@ -12,5 +20,5 @@
       <% end %>
     </select>
   </div>
-  <button class="btn btn-info" type="submit" name="button">Add brand to store</button>
+  <button class="btn btn-success" type="submit" name="button">Add</button>
 </form>
