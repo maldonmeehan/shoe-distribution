@@ -102,5 +102,13 @@ describe('add a new brand', {:type => :feature}) do
   end
 end
 
-# describe('view single brand path', {:type => :feature}) do
-#   it('allows a user to view a single brand') do
+describe('view single brand instance route', {:type => :feature}) do
+  it('allows the user to view a single brand') do
+    visit('/')
+    click_link('Add new brand')
+    fill_in('name', :with => 'Keds')
+    click_button('Add Brand')
+    click_link('Keds')
+    expect(page).to have_content('Keds')
+  end
+end

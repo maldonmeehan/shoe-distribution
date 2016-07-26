@@ -15,6 +15,22 @@
     <p>There are currently no brands for this store</p>
 <% end %>
 
+<h3>Add a brand</h3>
+<form action="/stores/<%= @store.id %>/brands" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div class="form-group">
+    <select class="form-control" name="brand">
+      <% if @brands %>
+      <% @brands.each do | brand | %>
+      <option value="<%= brand.id %>"> <%= brand.name %> </option>
+      <% end %>
+      <% end %>
+    </select>
+  </div>
+  <button class="btn btn-success" type="submit" name="button">Add brand to store</button>
+</form>
+
+
 <div class='container'>
 <a href="/stores/<%= @store.id() %>/edit">Update</a>
 <br>

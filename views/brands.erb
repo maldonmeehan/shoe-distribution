@@ -1,16 +1,17 @@
-<h1><%= @brand.name() %></h1>
+<h1>Current Brands in Database:</h1>
 
-<% if @brand.stores().any?() %>
-  <h3>Here are all the stores carring this brand:</h3>
-
+  <% if @brands == [] %>
+  <p>There are no brands saved in the database yet.</p>
+  <% else %>
   <ul>
-    <% @brand.store().each() do |store| %>
-      <li><%= store.name() %> <a href="/stores/<%= store.id() %>/edit">View this store</a></li>
+    <% @brands.each() do |brand| %>
+    <li><a href='/brands/<%= brand.id() %>'><%= brand.name() %></a></li>
     <% end %>
   </ul>
-
-  <% else %>
-    <p>There are no stores carring this brand right now!</p>
   <% end %>
 
-  <p><a href="/">Return to Main Page</a></p>
+  <div class='container'>
+    <button class="btn btn-info"><a href="/stores/new">Add new store</a></button>
+    <button class="btn btn-info"><a href="/brands/new">Add new brand</a></button>
+    <button class="btn btn-info"><a href="/stores">View all stores</a></button>
+  </div>
