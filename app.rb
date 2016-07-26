@@ -73,3 +73,8 @@ get('/brands/:id') do
   @brand = Brand.find(params.fetch("id").to_i())
   erb(:brand)
 end
+
+get('/brand_add_store/:id') do
+  @store = Store.find(params.fetch('id').to_i())
+  erb(:brand_add_store)
+end

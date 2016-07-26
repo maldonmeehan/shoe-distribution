@@ -112,3 +112,15 @@ describe('view single brand instance route', {:type => :feature}) do
     expect(page).to have_content('Keds')
   end
 end
+
+describe('add a brand to a store route', {:type => :feature}) do
+  it('allows the user to view the add a brand to a store page') do
+    visit('/')
+    click_link('Add new store')
+    fill_in('name', :with => 'Shoe Mill')
+    click_button('Add store')
+    click_link('Shoe Mill')
+    click_link('Add brand to a store')
+    expect(page).to have_content('Shoe Mill')
+  end
+end
