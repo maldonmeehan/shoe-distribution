@@ -3,7 +3,7 @@
 <% if @store.brands.any? %>
 <h2>Brands available at <%= @store.name %></h2>
 <ul>
-<% @store.brands.each do | store | %>
+<% @store.brands.each do | brand | %>
 <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
 <% end %>
 </ul>

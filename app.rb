@@ -85,11 +85,13 @@ end
 
 patch('/stores/:id/brands') do
   @store = Store.find(params.fetch('id').to_i())
-  @brand = Brand.find(params.fetch('id').to_i())
   new_brand_id = params.fetch('brand')
-  store.brands.push(new_brand_id)
+  @brand = Brand.find(new_brand_id)
+  if ! @store.brands.include?(@brand)
+    @store.brands.push(@brand)
+  end
   if @brand.save()
-    redirect('/store')
+    erb(:store)
   else
     erb(:brand_errors)
   end
