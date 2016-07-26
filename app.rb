@@ -58,6 +58,11 @@ get('/brands/new') do
   erb(:brand_form)
 end
 
+get ('/brands') do
+  @brands = Brand.all()
+  erb(:brands)
+end
+
 post('/brands') do
   name = params.fetch('name')
   @brand = Brand.new({:name => name, :id => nil})

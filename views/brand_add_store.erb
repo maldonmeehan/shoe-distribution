@@ -1,7 +1,7 @@
 <h2><%= @store.name() %></h2>
 
 <h3>Add a brand to a store:</h3>
-<form action="/stores/<%= @store.id %>/brands" method="post">
+<form action="/store/<%= @store.id %>/brands" method="post">
   <input type="hidden" name="_method" value="patch">
   <div class="form-group">
     <select class="form-control" name="brand">
@@ -12,5 +12,5 @@
       <% end %>
     </select>
   </div>
-  <button class="btn btn-success" type="submit" name="button">Add brand to store</button>
+  <button class="btn btn-info" type="submit" name="button">Add brand to store</button>
 </form>
